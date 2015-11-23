@@ -1,0 +1,16 @@
+<h1>To-Dos </h1>
+
+<ul class = "todos">
+	<% @todos.each do |todo| %>
+	<li class ="<%= 'completed' %>"> <%= todo.title %> </li>
+
+	<% if todo.completed? %>
+		<%= button_to "Incomplete", root_path %>
+		<% else %>
+
+		<%= button_to "Complete", root_path %>
+	<% end %>
+
+<% end %>
+</ul>
+<%= link_to "Add a New To-Do", new_todo_path %>
